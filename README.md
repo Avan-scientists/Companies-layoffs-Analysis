@@ -48,7 +48,7 @@ Find the row_number that will help to find the matches against all of these colu
 ```sql
 SELECT *;
 ROW_NUMBER() OVER(
-PARTITION BY Company,location,total_laid_off,percentage_laid_off,`date`) AS row_num
+PARTITION BY company,location,total_laid_off,percentage_laid_off,`date`) AS row_num
 FROM layoffs_stage
 )
 ```
@@ -68,6 +68,8 @@ WHERE row_num > 1;
 SELECT *
 FROM layoffs_stage
 WHERE company='Casper';
+```
+Let create another staging table
 
 
 
