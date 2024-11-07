@@ -29,15 +29,20 @@ Let start
 ```sql
 SELECT *
 FROM layoffs;
-
+```
 Let create some type of staging
 ```sql
 CREATE TABLE layoffs_stage
 LIKE layoffs;
-
+```
+Inserting values into our new table
+```sql
 INSERT INTO layoffs_stage
 SELECT *
 FROM layoffs;
+ ----------
+SELECT *
+FROM layoffs_stage;
 
 
 
