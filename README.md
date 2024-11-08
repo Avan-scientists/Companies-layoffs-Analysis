@@ -99,7 +99,32 @@ FROM layoffs_stage;
 ```sql
 SELECT *
 FROM layoffs_stage1;
-
+```
+```sql
+SELECT *
+FROM layoffs_stage1
+WHERE row_num >1;
+```
+Deleting the duplicaed Values
+```sql
+DELETE
+FROM layoffs_stage1
+WHERE row_num >1;
+```
+```sql
+SELECT *
+FROM layoffs_stage1;
+```
+### Standardizing of data
+Here we will use different functions to standardize layoffs data in each column
+```sql
+SELECT company,TRIM(company)
+FROM layoffs_stage1;
+```
+```sql
+UPDATE layoffs_stage1
+SET company = TRIM(company);
+```
 
 
 
