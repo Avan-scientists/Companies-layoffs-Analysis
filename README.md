@@ -182,12 +182,7 @@ SELECT `date`
 FROM layoffs_stage1;
 ```
 Remove the Null Values from data
-```sql
-SELECT *
-FROM layoffs_stage1
-WHERE total_laid_off IS NULL
-AND percentage_laid_off IS NULL;
-```
+
 Industries has some missing values
 ```sql
 SELECT *
