@@ -125,6 +125,26 @@ FROM layoffs_stage1;
 UPDATE layoffs_stage1
 SET company = TRIM(company);
 ```
+let look on industry
+```sql
+SELECT *
+FROM layoffs_stage1;
+```
+```sql
+SELECT *
+FROM layoffs_stage1
+WHERE industry LIKE 'Crypto%';
+```
+```sql
+
+UPDATE layoffs_stage1
+SET industry = 'Crypto'
+WHERE industry LIKE 'Crypto%';
+```
+```sql
+
+SELECT DISTINCT industry
+FROM layoffs_stage;
 
 
 
