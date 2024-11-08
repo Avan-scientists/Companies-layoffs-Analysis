@@ -46,16 +46,16 @@ FROM layoffs_stage;
 ```
 Find the row_number that will help to find the matches against all of these columns and help to determine duplicated values
 ```sql
-SELECT *;
+SELECT *,
 ROW_NUMBER() OVER(
 PARTITION BY company,location,total_laid_off,percentage_laid_off,`date`) AS row_num
 FROM layoffs_stage
-)
+;
 ```
 Create CTEs(Common Table Expressions) to define sub query block that you can then reference within the main query
 ```sql
 WITH duplicate_cte AS(
-SELECT *;
+SELECT *,
 ROW_NUMBER() OVER(
 PARTITION BY company,location,industry,total_laid_off,percentage_laid_off,country,`date`) AS row_num
 FROM layoffs_stage
