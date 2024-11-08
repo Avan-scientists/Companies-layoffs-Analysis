@@ -145,9 +145,55 @@ WHERE industry LIKE 'Crypto%';
 
 SELECT DISTINCT industry
 FROM layoffs_stage;
-
-
-
+```
+Let look on location
+```sql
+SELECT *
+FROM layoffs_stage1
+WHERE industry LIKE 'United States%'
+ORDER BY 1;
+```
+```sql
+SELECT DISTINCT country,TRIM(TRAILING'.'FROM country)
+FROM layoffs_stage1
+ORDER BY 1;
+```
+```sql
+UPDATE layoffs_stage1
+SET country = TRIM(TRAILING'.'FROM country)
+WHERE country LIKE 'United States%';
+```
+```sql
+SELECT *
+FROM layoffs_stage1;
+```
+Let look on date
+```sql
+SELECT `date`,
+STR_TO_DATE(`date`,'%m/%d/%Y')
+FROM layoffs_stage1;
+```
+```sql
+UPDATE layoffs_stage1
+SET `date`=STR_TO_DATE(`date`,'%m/%d/%Y');
+```
+```sql
+SELECT `date`
+FROM layoffs_stage1;
+```
+Remove the Null Values from data
+```sql
+SELECT *
+FROM layoffs_stage1
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
+```
+Industries has some missing values
+```sql
+SELECT *
+FROM layoffs_stage1
+WHERE industry IS NULL
+OR industry ='';
 
 
 
