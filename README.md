@@ -87,6 +87,19 @@ CREATE TABLE `layoffs_stage1` (
 ```sql
 SELECT *
 FROM layoffs_stage1;
+```
+Inserting the values into our layoffs_stage1
+```sql
+INSERT INTO layoffs_stage1
+SELECT *,
+ROW_NUMBER() OVER(
+PARTITION BY company,location,industry,total_laid_off,percentage_laid_off,country,`date`) AS row_num
+FROM layoffs_stage;
+```
+```sql
+SELECT *
+FROM layoffs_stage1;
+
 
 
 
