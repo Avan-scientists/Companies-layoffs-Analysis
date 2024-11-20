@@ -189,6 +189,17 @@ SELECT *
 FROM layoffs_stage1
 WHERE industry IS NULL
 OR industry ='';
+```
+```sql
+SELECT *
+FROM layoffs_stage1
+WHERE Company LIKE 'Airbnb';
+```
+```sql
+SELECT *
+FROM layoffs_stage1;
+```
+```
 
 
 
