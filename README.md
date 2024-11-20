@@ -199,7 +199,36 @@ WHERE Company LIKE 'Airbnb';
 SELECT *
 FROM layoffs_stage1;
 ```
+To check a null value in a total_laid_off and Percentage_laid_off
+```sql
+SELECT *
+FROM layoffs_stage1
+WHERE total_laid_off IS NULL
+AND percentage_laid_off IS NULL;
 ```
+Deleting a null values
+```sql
+DELETE
+FROM layoffs_stage1
+WHERE total_laid_off IS NULL;
+```
+```sql
+DELETE
+FROM layoffs_stage1
+WHERE percentage_laid_off IS NULL;
+```
+```sql
+SELECT *
+FROM layoffs_stage1;
+```
+Droping all unnecessary columns from the table
+```sql
+ALTER TABLE layoffs_stage1
+DROP COLUMN row_num;
+```
+```sql
+SELECT *
+FROM layoffs_stage1;
 
 
 
