@@ -229,7 +229,12 @@ DROP COLUMN row_num;
 ```sql
 SELECT *
 FROM layoffs_stage1;
-
+```
+## EXPLORATORY DATA ANALYSIS
+```
+```
+1.To find the total_laid_off number of employees and percentage_laid_off
+```sql
 
 
 
