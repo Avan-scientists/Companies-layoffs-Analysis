@@ -231,10 +231,42 @@ SELECT *
 FROM layoffs_stage1;
 ```
 ## EXPLORATORY DATA ANALYSIS
-```
-```
+
 1.To find the total_laid_off number of employees and percentage_laid_off
 ```sql
+SELECT MAX(total_laid_off),MAX(percentage_laid_off)
+FROM layoffs_stage1;
+```
+```sql
+SELECT *
+FROM layoffs_stage1
+WHERE percentage_laid_off=1
+ORDER BY total_laid_off DESC;
+```
+```sql
+SELECT Company,SUM(total_laid_off)
+FROM layoffs_stage1
+GROUP BY Company
+ORDER BY Company DESC;
+```
+Let Explory the data basic on date ranges to determine when the pandemic started or covid-19 started and three years later
+```sql
+SELECT MIN(date),MAX(date)
+FROM layoffs_stage1;
+```
+```sql
+SELECT `date`,SUM(total_laid_off)
+FROM layoffs_stage1
+GROUP BY `date`
+ORDER BY 2 DESC;
+```
+Number affected people in a year
+```sql
+SELECT YEAR(`date`),SUM(total_laid_off)
+FROM layoffs_stage1
+GROUP BY YEAR(`date`)
+ORDER BY 1 DESC;
+```
 
 
 
