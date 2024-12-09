@@ -1,7 +1,7 @@
 # Companies-layoffs-Analysis
 
 ### Project Overview
- This data Analysis Project aim to provide the insights into company's layoffs in the world over the past years. By Analyzing various aspects of data layoffs, we seek to identify trends, makw data-driven recommendations.
+ This data Analysis Project aim to provide the insights into company's layoffs in the world over the past years. By Analyzing various aspects of data layoffs, we seek to identify trends, make data-driven recommendations.
 
  ### Data Sources
   Layoffs data: The primary dataset used for this analysis is the "layoffs.csv" file, containing detailed information about each company's layoffs.
