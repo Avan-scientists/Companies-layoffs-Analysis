@@ -269,6 +269,7 @@ ORDER BY 1 DESC;
 ```
 You can also find the sum of the percentage laid_off for the company or industries
 This is my end of my project
+```
 
 
 
